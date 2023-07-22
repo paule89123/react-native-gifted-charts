@@ -242,7 +242,12 @@ export const PieChartMain = (props: propTypes) => {
                   stopOpacity="1"
                 />
                 <Stop
-                  offset="90%"
+                  offset="85%"
+                  stopColor={item.gradientCenterColor || gradientCenterColor}
+                  stopOpacity="1"
+                />
+                <Stop
+                  offset="95%"
                   stopColor={item.gradientCenterColor || gradientCenterColor}
                   stopOpacity="1"
                 />
