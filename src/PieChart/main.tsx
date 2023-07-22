@@ -223,6 +223,43 @@ export const PieChartMain = (props: propTypes) => {
         }`}
         height={radius * 2 + strokeWidth}
         width={radius * 2 + strokeWidth}>
+        <Defs>
+          {data.map((item, index) => {
+            return (
+              <RadialGradient
+                key={index + ''}
+                id={'grad' + index}
+                cx="75%" // Adjust these values
+                cy="25%" // Adjust these values
+                rx="50%"
+                ry="50%"
+                fx="50%"
+                fy="50%"
+                gradientUnits="userSpaceOnUse">
+                <Stop
+                  offset="80%"
+                  stopColor={item.color || colors[index % 9]}
+                  stopOpacity="1"
+                />
+                <Stop
+                  offset="88%"
+                  stopColor={item.gradientCenterColor || gradientCenterColor}
+                  stopOpacity="1"
+                />
+                <Stop
+                  offset="92%"
+                  stopColor={item.gradientCenterColor || gradientCenterColor}
+                  stopOpacity="1"
+                />
+                <Stop
+                  offset="100%"
+                  stopColor={item.color || colors[index % 9]}
+                  stopOpacity="1"
+                />
+              </RadialGradient>
+            );
+          })}
+        </Defs>
         {data.length === 1 ? (
           <>
             <Circle
