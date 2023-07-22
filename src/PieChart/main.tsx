@@ -237,13 +237,18 @@ export const PieChartMain = (props: propTypes) => {
                 fy="50%"
                 gradientUnits="userSpaceOnUse">
                 <Stop
-                  offset="0%"
+                  offset="80%"
                   stopColor={item.gradientCenterColor || gradientCenterColor}
                   stopOpacity="1"
                 />
                 <Stop
-                  offset="100%"
+                  offset="90%"
                   stopColor={item.color || colors[index % 9]}
+                  stopOpacity="1"
+                />
+                <Stop
+                  offset="100%"
+                  stopColor={item.gradientCenterColor || gradientCenterColor}
                   stopOpacity="1"
                 />
               </RadialGradient>
