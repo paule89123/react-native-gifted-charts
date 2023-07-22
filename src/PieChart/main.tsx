@@ -95,7 +95,7 @@ export const PieChartMain = (props: propTypes) => {
 
   // Reduce the radius to create a gap between segments
   let gap = 5; // Adjust this value to change the size of the gap
-  let adjustedRadius = radius - gap;
+  let adjustedRadius = radius;
 
   const canvasWidth = radius * 2;
   const canvasHeight = isThreeD ? radius * 2.3 : radius * 2;
