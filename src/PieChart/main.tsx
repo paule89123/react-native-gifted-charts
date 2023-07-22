@@ -229,8 +229,8 @@ export const PieChartMain = (props: propTypes) => {
               <RadialGradient
                 key={index + ''}
                 id={'grad' + index}
-                cx="75%" // Adjust these values
-                cy="25%" // Adjust these values
+                cx="50%"
+                cy="50%"
                 rx="50%"
                 ry="50%"
                 fx="50%"
