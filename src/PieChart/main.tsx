@@ -90,10 +90,13 @@ export const PieChartMain = (props: propTypes) => {
       }
     }
   }
-  // Reduce the radius to create a gap between segments
-  let gap = 10; // Adjust this value to change the size of the gap
 
-  const radius = props.radius ? props.radius - gap : 120;
+  const radius = props.radius || 120;
+
+  // Reduce the radius to create a gap between segments
+  let gap = 5; // Adjust this value to change the size of the gap
+  let adjustedRadius = radius - gap;
+
   const canvasWidth = radius * 2;
   const canvasHeight = isThreeD ? radius * 2.3 : radius * 2;
   const shadowWidth = props.shadowWidth || radius / 5;
@@ -289,7 +292,7 @@ export const PieChartMain = (props: propTypes) => {
                 key={index + 'a'}
                 d={`M ${cx + (item.shiftX || 0)} ${
                   cy + (item.shiftY || 0)
-                } L ${sx} ${sy} A ${radius} ${radius} 0 ${
+                } L ${sx} ${sy} A ${adjustedRadius} ${adjustedRadius} 0 ${
                   semiCircle ? 0 : data[index].value > total / 2 ? 1 : 0
                 } 1 ${ax} ${ay} L ${cx + (item.shiftX || 0)} ${
                   cy + (item.shiftY || 0)
