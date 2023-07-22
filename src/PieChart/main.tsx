@@ -53,7 +53,7 @@ type propTypes = {
   selectedIndex?: number;
   setSelectedIndex?: Function;
   onLabelPress?: Function;
-  isBiggerPie?: Boolean
+  isBiggerPie?: Boolean;
 };
 type itemType = {
   value: number;
@@ -90,7 +90,10 @@ export const PieChartMain = (props: propTypes) => {
       }
     }
   }
-  const radius = props.radius || 120;
+  // Reduce the radius to create a gap between segments
+  let gap = 5; // Adjust this value to change the size of the gap
+
+  const radius = props.radius ? props.radius - gap : 120;
   const canvasWidth = radius * 2;
   const canvasHeight = isThreeD ? radius * 2.3 : radius * 2;
   const shadowWidth = props.shadowWidth || radius / 5;
@@ -145,7 +148,7 @@ export const PieChartMain = (props: propTypes) => {
     minShiftY = 0,
     maxShiftY = 0,
     total = 0;
-    
+
   data.forEach((item: any) => {
     total += item.value;
     if (item.shiftX || item.shiftY) {
