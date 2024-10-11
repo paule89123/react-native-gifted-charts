@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "react-native-linear-gradient": "^2.7.3",
-    "react-native-svg": "^15.7.1"
+    "react-native-svg": "^15.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
